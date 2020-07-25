@@ -1,6 +1,8 @@
 #include<vector>
 #include<queue>
 
+using namespace std;
+
 //Dijkstra - shortest path to all nodes
 //Input:
 //	1. neighbours - list of neighbours for all nodes of the graph
@@ -19,12 +21,12 @@ struct Node
 	}
 };
 
-std::vector<int> Dijkstra(std::vector<std::vector<Node>>& neighbours, int start)
+vector<int> Dijkstra(vector<vector<Node>>& neighbours, int start)
 {
-	std::vector<bool> passed(neighbours.size(), false);
-	std::vector<int> paths(neighbours.size(), INT_MAX);
+	vector<bool> passed(neighbours.size(), false);
+	vector<int> paths(neighbours.size(), INT_MAX);
 
-	std::priority_queue<Node> queue;
+	priority_queue<Node> queue;
 	queue.push({ start, 0 });
 
 	while (!queue.empty())

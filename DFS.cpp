@@ -1,6 +1,8 @@
 #include<vector>
 #include<stack>
 
+using namespace std;
+
 //Depth first search
 //Input:
 //	1. neighbours - list of neighbours for all nodes of the graph
@@ -8,12 +10,12 @@
 //Output:
 //	vector that represents the order of the elements of all elements connected to the start
 
-std::vector<int> DFS(std::vector<std::vector<int>>& neighbours, int start)
+vector<int> DFS(vector<vector<int>>& neighbours, int start)
 {
-	std::vector<bool> passed(neighbours.size(), false);
-	std::vector<int> order;
+	vector<bool> passed(neighbours.size(), false);
+	vector<int> order;
 
-	std::stack<int> dfsStack;
+	stack<int> dfsStack;
 	dfsStack.push(start);
 
 	while (! dfsStack.empty())

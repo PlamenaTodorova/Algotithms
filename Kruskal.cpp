@@ -17,12 +17,12 @@ struct Node
 	}
 };
 
-std::vector<Node> Kruskal(std::vector<Node>& edges, int numberOfVertexes)
+vector<Node> Kruskal(vector<Node>& edges, int numberOfVertexes)
 {
-	std::vector<Node> tree;
-	std::vector<set<int>> unions(numberOfVertexes);
+	vector<Node> tree;
+	vector<set<int>> unions(numberOfVertexes);
 
-	std::sort(edges.begin(), edges.end());
+	sort(edges.begin(), edges.end());
 
 	for (int i = 0; i < edges.size(); i++)
 	{
@@ -35,10 +35,10 @@ std::vector<Node> Kruskal(std::vector<Node>& edges, int numberOfVertexes)
 	{
 		Node currentEdge = edges[index++];
 
-		std::vector<int> result;
-		std::vector<int>::iterator it;
+		vector<int> result;
+		vector<int>::iterator it;
 
-		it = std::set_intersection(unions[currentEdge.sorce].begin(), unions[currentEdge.sorce].end(),
+		it = set_intersection(unions[currentEdge.sorce].begin(), unions[currentEdge.sorce].end(),
 			unions[currentEdge.destination].begin(), unions[currentEdge.destination].end(),
 			result.begin());
 
